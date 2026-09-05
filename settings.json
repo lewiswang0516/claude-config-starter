@@ -1,0 +1,93 @@
+{
+  "effortLevel": "medium",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$HOME/.claude/hooks/guard-git.py\"",
+            "timeout": 15,
+            "statusMessage": "Checking git safety rules"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$HOME/.claude/hooks/check-file-content.py\"",
+            "timeout": 15,
+            "statusMessage": "Checking code hygiene rules"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$HOME/.claude/hooks/cn-slop-check.py\"",
+            "timeout": 15,
+            "statusMessage": "Checking Chinese slop rules"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$HOME/.claude/hooks/no-undone-restate.py\"",
+            "timeout": 15,
+            "statusMessage": "Checking closeout for undone-work restating"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$HOME/.claude/hooks/checkpoint-guard.sh\"",
+            "timeout": 10,
+            "statusMessage": "Checking for fake checkpoints"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true,
+    "figma@claude-plugins-official": true,
+    "xiaohongshu-complete-skills@xiaohongshu-skills": true,
+    "cloudflare@cloudflare": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-plugins-official": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/anthropics/claude-plugins-official.git"
+      }
+    },
+    "anthropic-agent-skills": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/anthropics/skills.git"
+      }
+    },
+    "xiaohongshu-skills": {
+      "source": {
+        "source": "github",
+        "repo": "vivy-yi/xiaohongshu-skills"
+      }
+    },
+    "cloudflare": {
+      "source": {
+        "source": "github",
+        "repo": "cloudflare/skills"
+      }
+    }
+  }
+}

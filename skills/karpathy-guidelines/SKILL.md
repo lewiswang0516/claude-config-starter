@@ -1,4 +1,5 @@
 ---
+disable-model-invocation: true
 name: karpathy-guidelines
 description: Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, define verifiable success criteria, and pick the simplest solution via the solution ladder (YAGNI, reuse, stdlib, native platform, one line).
 license: MIT
@@ -15,10 +16,10 @@ Behavioral guidelines to reduce common LLM coding mistakes, derived from [Andrej
 **Don't assume. Don't hide confusion. Surface tradeoffs.**
 
 Before implementing:
-- State your assumptions explicitly. If uncertain, ask.
-- If multiple interpretations exist, present them - don't pick silently.
-- If a simpler approach exists, say so. Push back when warranted.
-- If something is unclear, stop. Name what's confusing. Ask.
+- State your assumptions explicitly, in the summary at the latest.
+- If multiple readings exist and lead to materially different work, present them and ask. If they lead to the same work, take the reading the wording and surrounding code most directly support, and say so.
+- If a simpler approach exists, say so. Push back when warranted, then build under stated assumptions unless the user redirects.
+- When a question comes up mid-task, first do everything that does not depend on the answer. Put the question at the end of a turn that also delivers that progress.
 
 ## 2. Simplicity First
 

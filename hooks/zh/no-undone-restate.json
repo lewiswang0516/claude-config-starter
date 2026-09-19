@@ -19,6 +19,22 @@
     {
       "label": "复述早前内容",
       "regex": "之前(已经)?说过|如前所述|上面(已经)?(提到|说)过|再(强调|提醒)一(下|遍)|(另外|顺带)(提醒|一提)|一点更正"
+    },
+    {
+      "label": "没做的/未完成标题",
+      "regex": "(?:^|\\n)[ \\t]*[#\\-*•]{0,3}[ \\t]*\\*{0,2}[ \\t]*(?:没做的|未做|没有做|未完成|没改|未改|没动|没碰|留作后续|后续|待办|遗留|Not done|Left untouched|Not changed|Follow-ups?|Out of scope|Deferred|TODO)"
+    },
+    {
+      "label": "没改没动式收尾句",
+      "regex": "(?:没改|没动|未处理|没处理|没碰|未改)。|left as is|left alone|did not touch|did not change|not touched|untouched"
+    },
+    {
+      "label": "把工作推回给你(扩展)",
+      "regex": "你决定|需要我|如果你希望|如果你想|我(可以)?再(帮|让|派|改|加|补|把|去|来|写|跑|做)|if you want|if you'd like|let me know|shall I|want me to|I can also"
+    },
+    {
+      "label": "无关遗留问题当作后续",
+      "regex": "和本次任务无关|与本次无关|不在本次范围|属于遗留|unrelated to this task|pre-existing|out of scope for this"
     }
   ],
   "reason": "收尾检查未通过，检测到: {hits}。重写你最后一条回复：只写本轮实际做了什么、发现了什么。删掉描述没做的事、没碰的文件、推回给用户的待办、以及早前已经说过的内容。真正的阻塞只说一次，写成“X 没做成，原因 Y”，不要问“要不要我”。"

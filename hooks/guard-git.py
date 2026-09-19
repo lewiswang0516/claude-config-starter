@@ -9,6 +9,7 @@ Enforces user rules that dcg does not cover:
 """
 import json
 import re
+import shlex
 import subprocess
 import sys
 
@@ -67,7 +68,14 @@ def main():
 
     for m in re.finditer(r"\bgit\s+((?:-[^\s]+\s+)*)push\b([^;|&\n]*)", cmd):
         rest = m.group(2)
-        toks = rest.split()
+        try:
+            toks = shlex.split(rest)
+        except ValueError:
+            deny("Cannot parse git push arguments safely; use a simple explicit command.")
+        if any("$" in token or "`" in token for token in toks):
+            deny("Use literal remote and refspec arguments for git push.")
+        if any(token in ("--all", "--mirror") for token in toks):
+            deny("Bulk pushes may include protected branches; use an explicit feature refspec.")
         if "--dry-run" in toks or "-n" in toks:
             continue
         args = []
@@ -85,7 +93,7 @@ def main():
         if refspecs:
             for r in refspecs:
                 target = r.split(":")[-1].lstrip("+")
-                name = target.split("/")[-1]
+                name = target.removeprefix("refs/heads/")
                 if name in PROTECTED:
                     deny(
                         f"User rule: never push directly to protected branch '{name}'. "

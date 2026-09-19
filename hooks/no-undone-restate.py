@@ -23,7 +23,7 @@ QUOTED = re.compile("\u201c[^\u201d\n]*\u201d|\u300c[^\u300d\n]*\u300d|\"[^\"\n]
 def load_rules():
     with open(PATTERN_FILE, "r", encoding="utf-8") as f:
         data = json.load(f)
-    patterns = [(p["label"], re.compile(p["regex"])) for p in data["patterns"]]
+    patterns = [(p["label"], re.compile(p["regex"], re.IGNORECASE)) for p in data["patterns"]]
     return patterns, data["reason"]
 
 

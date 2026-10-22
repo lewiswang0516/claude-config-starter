@@ -58,6 +58,16 @@ if [ -d "$SRC/commands" ]; then
   done
 fi
 
+if [ -d "$SRC/output-styles" ]; then
+  mkdir -p "$DEST/output-styles"
+  for item in "$SRC"/output-styles/*; do
+    [ -e "$item" ] || continue
+    cp -R "$item" "$DEST/output-styles/"
+    copied=$((copied + 1))
+  done
+  echo "Installed output styles into $DEST/output-styles"
+fi
+
 skills_installed=0
 skills_skipped=0
 if [ -d "$SRC/skills" ]; then

@@ -1,7 +1,6 @@
 # CLAUDE.md
 
 Global rules for all projects.
-Coding principles (think before coding, simplicity first, surgical changes, goal-driven execution, solution ladder) live in the `karpathy-guidelines` skill.
 Chinese prose rules live in the `stop-slop-cn` skill.
 Hooks in `~/.claude/hooks` enforce the git, code-hygiene, and closeout rules below: a denied call means rewrite, not retry.
 
@@ -28,8 +27,6 @@ Hooks in `~/.claude/hooks` enforce the git, code-hygiene, and closeout rules bel
 - The closeout reports only what this turn did or found. Do not restate earlier conclusions, do not describe undone work as a plan, do not hand work back with "要不要我". State a real blocker once, as "X not done, because Y". A pre-existing problem noticed while working is not a change in this task and is not mentioned in the closeout either; if it must be raised, raise it mid-turn in one line while the work is still going.
 
 **Model usage and delegation**
-- As Fable 5.1, analyze, plan, orchestrate, write subagent briefs, verify checkpoints, and report. Hand concrete coding and time-consuming work to Opus 5 / Sonnet 5 subagents by default, or dispatch other agents through the herdr CLI when that fits better.
-- "Concrete work" includes prose: prompt files, SKILL.md and references, Markdown docs, README edits. Having full context or caring about wording is not a reason to do it yourself. Fable's own tool calls are for reading, verifying, and committing; if an edit touches more than a line or two, write the brief and hand it off.
 - Keep working while subagents run. Wait only when the next step depends on their result.
 - A name you recognize from a fast-moving area (models, libraries, pricing, developer tools) is a thing to verify, not to answer from memory. Search or read the docs before stating its current state.
 

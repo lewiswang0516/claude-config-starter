@@ -1,0 +1,17 @@
+{
+  "modules": ["./register.js"],
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/hooks/stop-guard.mjs"],
+            "timeout": 20
+          }
+        ]
+      }
+    ]
+  }
+}

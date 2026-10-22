@@ -1,0 +1,6 @@
+{
+  "name": "reply-guard",
+  "version": "0.1.0",
+  "author": { "name": "Lewis Wang" },
+  "description": "Sends a final reply back for a rewrite when it is in the wrong language, carries unasked disclaimers, or hands back doable work"
+}

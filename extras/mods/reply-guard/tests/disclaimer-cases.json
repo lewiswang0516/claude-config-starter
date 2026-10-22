@@ -1,0 +1,45 @@
+{
+  "untouched": {
+    "reply": "登录按钮已经改成蓝色，改的是 `src/Login.tsx` 第 12 行，typecheck 通过。注册页的按钮我没动。",
+    "flagged": ["注册页的按钮我没动。"],
+    "kept": "登录按钮已经改成蓝色"
+  },
+  "notRunAndWaiting": {
+    "reply": "解析器的改动已经完成，新增的三个用例都通过了。README 记的是 133 passed，这次我没重跑。中文 artifact 还在等你选怎么处理，我没有动。",
+    "flagged": [
+      "README 记的是 133 passed，这次我没重跑。",
+      "中文 artifact 还在等你选怎么处理，我没有动。"
+    ]
+  },
+  "short": {
+    "reply": "改好了，别的地方都没动。"
+  },
+  "quotedCues": {
+    "reply": "规则里新加了「没动」和「保持原样」两个说法，匹配写在 `没(有)?动` 这条正则里，例子是 “我没改” 这种句子。\n```js\n// left untouched on purpose\n```\n测试已经全部通过。"
+  },
+  "notDisclaimers": {
+    "reply": "测试没跑通，报错在 `export.spec.ts` 第 12 行，是超时。pytest 结果是 179 passed，4 skipped。值不在允许范围里时 parser 会报错。"
+  },
+  "labeled": [
+    "上一轮提的另外两条（英文 STE 规则、HTML 页面规则）你这次没选，所以我没动，CLAUDE.md 还是原样。",
+    "「禁改区」原来就已经豁免代码、命令、路径和引用，所以没改。",
+    "这是原来就有的规则，这次没动。",
+    "仓库里其他 `.md` 都没有提到这个 skill，不用改。",
+    "我读了 README 第 100 到 116 行确认过，别的地方都没动。",
+    "这次派出去的改动没有动它。",
+    "我扫过一遍，没有提交任何 mock key。",
+    "PASU-1471 留了一条进度评论，状态没动。",
+    "它在「例外」一节里，作用是给判断举例，不是给你的指令，所以保持原样也没有歧义。",
+    "中文 artifact：还在等你选怎么处理（选项见上一条回复），我没有动。",
+    "这正是第 8 项任务单里已经写好的做法，所以 subagent 那边不用改。",
+    "我刻意跳过了 cctop、flightdeck、hud 这类大面板，它们一屏塞十几项指标，正是你不想要的信息过载。",
+    "README 记的是 133 passed、2 skipped，这次我没重跑。",
+    "上一轮提的英文 STE 规则和 HTML 页面规则还没做，`CLAUDE.md` 没改。"
+  ],
+  "english": [
+    "I left the signup page untouched.",
+    "That is out of scope for this ticket.",
+    "I did not change the export code.",
+    "The tests were not re-run."
+  ]
+}

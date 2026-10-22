@@ -62,7 +62,8 @@
     "frontend-design@claude-plugins-official": true,
     "figma@claude-plugins-official": true,
     "xiaohongshu-complete-skills@xiaohongshu-skills": true,
-    "cloudflare@cloudflare": true
+    "cloudflare@cloudflare": true,
+    "document-skills@anthropic-agent-skills": true
   },
   "extraKnownMarketplaces": {
     "claude-plugins-official": {

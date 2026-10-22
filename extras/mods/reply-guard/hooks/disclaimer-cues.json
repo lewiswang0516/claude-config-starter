@@ -1,0 +1,19 @@
+{
+  "patterns": [
+    "没有?(?:再|重新)?(?:动(?![画态作机词])|改|碰|修改|处理|重跑|跑(?!通)|运行|提交|做)",
+    "没选",
+    "没变|没有变化",
+    "未(?:改|动|修改|提交|处理|运行)",
+    "(?:保持|还是|维持|仍是|仍然是)原样",
+    "(?:不用|不需要|无需|不必)(?:再)?(?:改|动|修改|处理)",
+    "跳过",
+    "(?:不在|超出|超过)(?:这次|本次|此次|这个)?(?:任务|ticket|改动|需求|PR)?的?范围",
+    "不属于(?:这次|本次|此次)",
+    "\\buntouched\\b",
+    "\\bunchanged\\b",
+    "\\bout of scope\\b",
+    "\\bleft\\b.{0,40}\\bas[- ]is\\b",
+    "\\b(?:did not|didn't|do not|don't|have not|haven't)\\s+(?:change|touch|modify|edit|run|re-?run|commit)\\b",
+    "\\b(?:was|were) not (?:re-?run|run|changed|touched|modified|committed)\\b"
+  ]
+}
